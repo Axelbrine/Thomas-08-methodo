@@ -1,24 +1,23 @@
-Manrope Variable Font
+Signika Variable Font
 =====================
 
-This download contains Manrope as both a variable font and static fonts.
+This download contains Signika as both a variable font and static fonts.
 
-Manrope is a variable font with this axis:
+Signika is a variable font with these axes:
+  GRAD
   wght
 
 This means all the styles are contained in a single file:
-  Manrope-VariableFont_wght.ttf
+  Signika-VariableFont_GRAD,wght.ttf
 
 If your app fully supports variable fonts, you can now pick intermediate styles
 that aren’t available as static fonts. Not all apps support variable fonts, and
-in those cases you can use the static font files for Manrope:
-  static/Manrope-ExtraLight.ttf
-  static/Manrope-Light.ttf
-  static/Manrope-Regular.ttf
-  static/Manrope-Medium.ttf
-  static/Manrope-SemiBold.ttf
-  static/Manrope-Bold.ttf
-  static/Manrope-ExtraBold.ttf
+in those cases you can use the static font files for Signika:
+  static/Signika-Light.ttf
+  static/Signika-Regular.ttf
+  static/Signika-Medium.ttf
+  static/Signika-SemiBold.ttf
+  static/Signika-Bold.ttf
 
 Get started
 -----------
