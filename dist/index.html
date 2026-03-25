@@ -11,14 +11,14 @@
     <header>
       <nav>
         <div class="logo">
-          <img src="images/logo.svg" alt="Movie logo" />
+          <img src="images/wtf.svg" alt="Movie logo" />
           <span>Movie Quiz</span>
         </div>
         <div class="nav">
           <ul class="nav__links">
             <li><a href="#">Home</a></li>
-            <li><a href="#">Quiz</a></li>
-            <li><a href="#">Results</a></li>
+            <li><a href="#" class="disabled">Quiz</a></li>
+            <li><a href="#" class="disabled">Results</a></li>
           </ul>
         </div>
         <div class="cont-width">
@@ -62,6 +62,57 @@
           <button class="modal-profile__submit" type="button">Start Quiz</button>
         </div>
       </div>
+      <div class="modal-category" id="modal-category">
+        <h2 class="modal-category__external-title">CHOOSE YOUR CHALLENGE</h2>
+        <div class="modal-category__card">
+          <h3 class="modal-category__title">SELECT CATEGORY</h3>
+          <p class="modal-category__subtitle">
+            Choose a movie category to focus your quiz, or select "All Categories" for a mixed experience.
+          </p>
+
+          <div class="modal-category__options">
+            <label class="category-option">
+              <input type="radio" name="category" value="all" checked />
+              <span>ALL CATEGORIES</span>
+            </label>
+
+            <label class="category-option">
+              <input type="radio" name="category" value="action" />
+              <span>ACTION</span>
+            </label>
+
+            <label class="category-option">
+              <input type="radio" name="category" value="drama" />
+              <span>DRAMA</span>
+            </label>
+
+            <label class="category-option">
+              <input type="radio" name="category" value="thriller" />
+              <span>THRILLER</span>
+            </label>
+
+            <label class="category-option">
+              <input type="radio" name="category" value="romance" />
+              <span>ROMANCE</span>
+            </label>
+
+            <label class="category-option">
+              <input type="radio" name="category" value="sci-fi" />
+              <span>SCI-FI</span>
+            </label>
+
+            <label class="category-option">
+              <input type="radio" name="category" value="fantasy" />
+              <span>FANTASY</span>
+            </label>
+          </div>
+
+          <div class="modal-category__actions">
+            <button type="button" class="btn-cancel" onclick="off()">CANCEL</button>
+            <button type="button" class="btn-start">START QUIZ</button>
+          </div>
+        </div>
+      </div>
 
       <section class="pattern">
         <!-- HERO SECTION -->
@@ -72,8 +123,8 @@
             <p>iconic movie quotes to their films.</p>
           </div>
           <div class="hero__actions">
-            <a href="#" class="btn-prm" onclick="on()">Start Quiz</a>
-            <a href="#" class="btn-scd">Browse by Category</a>
+            <a href="#" class="btn-prm" onclick="openModal('modal-profile')">Start Quiz</a>
+            <a href="#" class="btn-scd" onclick="openModal('modal-category')">Browse by Category</a>
           </div>
         </section>
 
