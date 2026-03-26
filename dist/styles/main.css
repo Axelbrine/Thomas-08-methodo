@@ -135,6 +135,7 @@ button {
   grid-template-rows: repeat(3, 1fr);
 }
 .pattern .hero__actions {
+  padding-top: 2rem;
   display: flex;
   justify-content: center;
   gap: 2rem;
@@ -367,21 +368,19 @@ header nav .cont-width button.active:active {
 .quote-teaser blockquote {
   border-left: 1px solid #dbe1e8;
 }
-.quote-teaser blockquote p {
+.quote-teaser blockquote h3 {
   color: #12181b;
-  line-height: 1.4;
   margin-bottom: 0.5rem;
 }
-.quote-teaser blockquote p::before {
-  content: "'";
+.quote-teaser blockquote h3::before {
+  content: '"';
   color: #405be6;
 }
-.quote-teaser blockquote p::after {
-  content: "'";
+.quote-teaser blockquote h3::after {
+  content: '"';
   color: #405be6;
 }
 .quote-teaser blockquote footer {
-  color: #8e9ba5;
   margin-bottom: 2rem;
 }
 .quote-teaser button {
@@ -414,27 +413,22 @@ header nav .cont-width button.active:active {
 
 .footer {
   padding: 3rem 0;
-  padding-left: 2rem;
-  padding-right: 2rem;
   background: #2a2a2a;
-  color: #8e9ba5;
 }
 .footer__inner {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 2rem;
 }
+.footer__inner p {
+  color: #EFB2B2;
+}
 .footer__brand {
-  padding: 1rem 0 2rem;
   display: flex;
   flex-direction: column;
   gap: 0.6rem;
 }
-.footer__brand .footer__logo {
-  color: #EFB2B2;
-  letter-spacing: 0.05em;
-}
-.footer__brand p:not(.footer__logo) {
+.footer__brand .neutral {
   color: #ffffff;
   max-width: 280px;
 }
@@ -443,12 +437,6 @@ header nav .cont-width button.active:active {
   grid-template-columns: repeat(2, 1fr);
   padding: 1rem 0 2rem;
   gap: 2rem;
-}
-.footer__right h3 {
-  color: #EFB2B2;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  margin-bottom: 1rem;
 }
 .footer__right ul {
   display: flex;
@@ -472,10 +460,9 @@ header nav .cont-width button.active:active {
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-  letter-spacing: 0.04em;
 }
-.footer-copyright::before {
-  content: url("../images/wtf.svg");
+.footer-copyright img {
+  width: 3rem;
 }
 
 /* OVERLAY */
@@ -635,7 +622,7 @@ header nav .cont-width button.active:active {
   text-align: center;
 }
 .modal-category__external-title {
-  color: #4a148c;
+  color: #EFB2B2;
   padding-bottom: 1rem;
   text-align: center;
   text-transform: uppercase;
@@ -643,19 +630,18 @@ header nav .cont-width button.active:active {
 }
 .modal-category__card {
   text-align: start;
-  overflow: scroll;
   background: #ffffff;
-  border: 6px solid #000000;
   padding: 2.5rem 2rem;
   width: 100%;
   max-width: 450px;
   height: 100%;
+  max-height: 60vh;
 }
 .modal-category.is-visible {
   display: block;
 }
 .modal-category__title {
-  color: #4a148c;
+  color: #EFB2B2;
   text-transform: uppercase;
   margin-bottom: 0.5rem;
 }
@@ -665,6 +651,10 @@ header nav .cont-width button.active:active {
   line-height: 1.4;
 }
 .modal-category__options {
+  overflow: scroll;
+  scrollbar-width: none;
+  min-height: 15rem;
+  max-height: 20rem;
   display: flex;
   flex-direction: column;
   gap: 0.6rem;
@@ -762,6 +752,191 @@ header nav .cont-width button.active:active {
   align-items: center;
 }
 
+.container {
+  padding-inline: 1.25rem;
+}
+
+header nav {
+  grid-template-columns: 1fr auto;
+  position: relative;
+}
+header nav .nav {
+  display: none;
+}
+header nav .cont-width {
+  display: none;
+}
+header nav .nav-toggle {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 2rem;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 0;
+}
+header nav .nav-toggle span {
+  display: block;
+  height: 2px;
+  width: 100%;
+  background: currentColor;
+  border-radius: 2px;
+}
+
+.pattern .hero {
+  grid-template-rows: auto;
+  text-align: center;
+}
+.pattern .hero .placeFill h2 {
+  display: inline;
+}
+.pattern .hero__actions {
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+.pattern .hero__actions .btn-prm,
+.pattern .hero__actions .btn-scd {
+  width: 100%;
+  max-width: 320px;
+  text-align: center;
+}
+
+.features {
+  grid-auto-flow: row;
+  grid-template-columns: 1fr;
+}
+.features .feature {
+  min-width: unset;
+  max-width: unset;
+  width: 100%;
+  height: auto;
+  padding: 1.5rem;
+}
+
+.bottom-section {
+  padding-block: 3rem;
+}
+.bottom-section .container__grid-2 {
+  grid-template-columns: 1fr;
+  gap: 3rem;
+}
+
+.quote-teaser {
+  padding-left: 0;
+}
+.quote-teaser blockquote {
+  border-left: none;
+  border-top: 1px solid #dbe1e8;
+  padding-top: 2rem;
+}
+
+.footer__inner {
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+.footer__right {
+  grid-template-columns: 1fr 1fr;
+  padding-top: 0;
+}
+
+.modal-profile {
+  width: 95vw;
+}
+.modal-profile__card {
+  min-width: unset;
+  width: 100%;
+  padding: 1.5rem;
+}
+.modal-profile__avatars {
+  gap: 1rem;
+}
+.modal-profile__avatar-option img {
+  max-width: 100px;
+  height: 100px;
+}
+
+@media screen and (min-width: 450px) {
+  .container {
+    padding-inline: 2rem;
+  }
+  .features .feature {
+    max-width: 380px;
+    margin-inline: auto;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .container {
+    padding-inline: 10rem;
+  }
+  header nav {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  header nav .nav {
+    display: flex;
+  }
+  header nav .cont-width {
+    display: flex;
+  }
+  header nav .nav-toggle {
+    display: none;
+  }
+  .pattern .hero {
+    grid-template-rows: repeat(3, 1fr);
+  }
+  .pattern .hero__actions {
+    flex-direction: row;
+  }
+  .pattern .hero__actions .btn-prm,
+  .pattern .hero__actions .btn-scd {
+    width: auto;
+    max-width: none;
+  }
+  .features {
+    grid-auto-flow: column;
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .features .feature {
+    max-width: 300px;
+    min-width: 300px;
+    height: 250px;
+  }
+  .bottom-section {
+    padding-block: 5rem;
+  }
+  .bottom-section .container__grid-2 {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 4rem;
+  }
+  .quote-teaser {
+    padding-left: 4rem;
+  }
+  .quote-teaser blockquote {
+    border-left: 1px solid #dbe1e8;
+    border-top: none;
+    padding-top: 0;
+  }
+  .footer__inner {
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+  .modal-profile {
+    width: auto;
+  }
+  .modal-profile__card {
+    min-width: 480px;
+    padding: 2rem 2.5rem 2.5rem;
+  }
+  .modal-profile__avatars {
+    gap: 2rem;
+  }
+  .modal-profile__avatar-option img {
+    max-width: 180px;
+    height: 180px;
+  }
+}
 *,
 *::after,
 *::before {

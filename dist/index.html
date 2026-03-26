@@ -12,7 +12,7 @@
       <nav class="container">
         <div class="logo">
           <img src="images/wtf.svg" alt="Movie logo" />
-          <span>Movie Quiz</span>
+          <h3>Movie Quiz</h3>
         </div>
         <div class="nav">
           <ul class="nav__links">
@@ -27,6 +27,11 @@
             <button>FR</button>
           </div>
         </div>
+        <button class="nav-toggle" aria-label="Menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
       </nav>
     </header>
 
@@ -119,8 +124,8 @@
           <section class="hero">
             <h1>Quote <span>King</span> or Movie Fan?</h1>
             <div class="placeFill">
-              <p>Test your cinema knowledge by matching</p>
-              <p>iconic movie quotes to their films.</p>
+              <h2>Test your cinema knowledge by matching</h2>
+              <h2>iconic movie quotes to their films.</h2>
             </div>
             <div class="hero__actions">
               <a href="#" class="btn-prm" onclick="openModal('modal-profile')">Start Quiz</a>
@@ -154,7 +159,7 @@
         <div class="container container__grid-2">
           <!-- LEADERBOARD -->
           <div class="leaderboard">
-            <h2>Top Players This Week</h2>
+            <h3>Top Players This Week</h3>
             <ol>
               <li>
                 <span class="username">SQUEEZI</span>
@@ -177,7 +182,7 @@
           <!-- QUOTE TEASER -->
           <div class="quote-teaser">
             <blockquote>
-              <p>May the Force be with you.</p>
+              <h3>May the Force be with you.</h3>
               <footer>— Guess the movie!</footer>
             </blockquote>
             <button type="button">Reveal Answer</button>
@@ -193,11 +198,11 @@
       <div class="container footer__inner">
         <div class="footer__brand">
           <p class="footer__logo">Movie Kings</p>
-          <p>Ultimate Movie Quiz to challenge your friends.</p>
+          <p class="neutral">Ultimate Movie Quiz to challenge your friends.</p>
         </div>
         <div class="footer__right">
           <nav class="footer__nav">
-            <h3>Navigation</h3>
+            <p>Navigation</p>
             <ul>
               <li><a href="#">Home</a></li>
               <li><a href="#">Start Quiz</a></li>
@@ -206,7 +211,7 @@
             </ul>
           </nav>
           <div class="footer__resources">
-            <h3>Resources</h3>
+            <p>Resources</p>
             <ul>
               <li><a href="#">IMDb</a></li>
               <li><a href="#">Sight &amp; Sound</a></li>
@@ -216,7 +221,10 @@
         </div>
       </div>
     </footer>
-    <div class="footer-copyright">© 2026 Movie Kings</div>
+    <div class="footer-copyright">
+      <img src="images/wtf.svg" alt="Movie logo" />
+      © 2026 Movie Kings
+    </div>
   </body>
   <script src="scripts/script.js"></script>
 </html>

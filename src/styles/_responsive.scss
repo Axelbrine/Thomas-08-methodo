@@ -1,0 +1,243 @@
+@use "variables" as *;
+@import "mixins";
+
+//essaie mobile first
+
+.container {
+  padding-inline: 1.25rem;
+}
+
+// NAV
+header nav {
+  grid-template-columns: 1fr auto;
+  position: relative;
+
+  .nav {
+    display: none;
+  }
+
+  .cont-width {
+    display: none;
+  }
+
+  .nav-toggle {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    width: 2rem;
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 0;
+
+    span {
+      display: block;
+      height: 2px;
+      width: 100%;
+      background: currentColor;
+      border-radius: 2px;
+    }
+  }
+}
+
+// HERO
+.pattern .hero {
+  grid-template-rows: auto;
+  text-align: center;
+
+  .placeFill {
+    h2 {
+      display: inline;
+    }
+  }
+
+  &__actions {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+
+    .btn-prm,
+    .btn-scd {
+      width: 100%;
+      max-width: 320px;
+      text-align: center;
+    }
+  }
+}
+
+.features {
+  grid-auto-flow: row;
+  grid-template-columns: 1fr;
+
+  .feature {
+    min-width: unset;
+    max-width: unset;
+    width: 100%;
+    height: auto;
+    padding: 1.5rem;
+  }
+}
+
+.bottom-section {
+  padding-block: 3rem;
+
+  .container__grid-2 {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+}
+
+.quote-teaser {
+  padding-left: 0;
+
+  blockquote {
+    border-left: none;
+    border-top: 1px solid $color-grey-1;
+    padding-top: 2rem;
+  }
+}
+
+.footer {
+  &__inner {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  &__right {
+    grid-template-columns: 1fr 1fr;
+    padding-top: 0;
+  }
+}
+
+.modal-profile {
+  width: 95vw;
+
+  &__card {
+    min-width: unset;
+    width: 100%;
+    padding: 1.5rem;
+  }
+
+  &__avatars {
+    gap: 1rem;
+  }
+
+  &__avatar-option img {
+    max-width: 100px;
+    height: 100px;
+  }
+}
+
+// Small (≥ 450px)
+
+@include bp("small") {
+  .container {
+    padding-inline: 2rem;
+  }
+
+  .features .feature {
+    max-width: 380px;
+    margin-inline: auto;
+  }
+}
+
+// Desktop (≥ 1280px)
+
+@include bp("desktop") {
+  .container {
+    padding-inline: 10rem;
+  }
+
+  // NAV pour le layout complet
+  header nav {
+    grid-template-columns: repeat(3, 1fr);
+
+    .nav {
+      display: flex;
+    }
+
+    .cont-width {
+      display: flex;
+    }
+
+    .nav-toggle {
+      display: none;
+    }
+  }
+
+  // HERO avec le retour grille 3 lignes
+  .pattern .hero {
+    grid-template-rows: repeat(3, 1fr);
+
+    &__actions {
+      flex-direction: row;
+
+      .btn-prm,
+      .btn-scd {
+        width: auto;
+        max-width: none;
+      }
+    }
+  }
+
+  // FEATURES 3 colonnes
+  .features {
+    grid-auto-flow: column;
+    grid-template-columns: repeat(3, 1fr);
+
+    .feature {
+      max-width: 300px;
+      min-width: 300px;
+      height: 250px;
+    }
+  }
+
+  // BOTTOM SECTION 2 colonnes
+  .bottom-section {
+    padding-block: 5rem;
+
+    .container__grid-2 {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 4rem;
+    }
+  }
+
+  // QUOTE TEASER
+  .quote-teaser {
+    padding-left: 4rem;
+
+    blockquote {
+      border-left: 1px solid $color-grey-1;
+      border-top: none;
+      padding-top: 0;
+    }
+  }
+
+  // FOOTER 2 colonnes
+  .footer {
+    &__inner {
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+    }
+  }
+
+  // MODAL PROFILE
+  .modal-profile {
+    width: auto;
+
+    &__card {
+      min-width: 480px;
+      padding: 2rem 2.5rem 2.5rem;
+    }
+
+    &__avatars {
+      gap: 2rem;
+    }
+
+    &__avatar-option img {
+      max-width: 180px;
+      height: 180px;
+    }
+  }
+}
