@@ -92,7 +92,20 @@ button {
   list-style: none;
 }
 
-/*   HEADER - Nav   */
+/* --- LIMITE LARGEUR CONTENU --- */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin-inline: auto;
+  padding-inline: 10rem;
+}
+.container__grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 4rem;
+  align-items: start;
+}
+
 /*   BODY - Pattern   */
 .pattern {
   display: grid;
@@ -162,7 +175,7 @@ button {
 }
 
 header nav {
-  padding: 2rem;
+  padding-block: 2rem;
   display: grid;
   grid-auto-flow: column;
   grid-template-columns: repeat(3, 1fr);
@@ -172,7 +185,7 @@ header nav {
 header nav .logo {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
 }
 header nav .logo img {
   width: 3rem;
@@ -214,7 +227,7 @@ header nav .nav__links li .disabled {
 }
 header nav .cont-width {
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
 }
 header nav .cont-width .lang-switch {
   max-width: 10rem;
@@ -285,10 +298,7 @@ header nav .cont-width button.active:active {
 }
 
 .bottom-section {
-  padding: 5rem 2rem;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 4rem;
+  padding-block: 5rem;
   align-items: start;
 }
 
@@ -403,15 +413,16 @@ header nav .cont-width button.active:active {
 }
 
 .footer {
-  padding: 3rem calc((100vw - 1200px) / 2 + 2rem);
+  padding: 3rem 0;
   padding-left: 2rem;
   padding-right: 2rem;
   background: #2a2a2a;
+  color: #8e9ba5;
+}
+.footer__inner {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: auto auto;
-  gap: 0;
-  color: #8e9ba5;
+  gap: 2rem;
 }
 .footer__brand {
   padding: 1rem 0 2rem;
@@ -763,7 +774,7 @@ header nav .cont-width button.active:active {
 
 /* --- BODY --- */
 body.quiz-page {
-  background-color: #EFB2B2;
+  background-color: #343434;
   max-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -798,9 +809,9 @@ header {
 
 /* --- PROGRESS ZONE --- */
 .quiz-progress {
-  background-color: #4f4f4f;
+  background-color: #EFB2B2;
   padding: 1rem 2rem;
-  color: #ffffff;
+  color: #000000;
 }
 .quiz-progress__inner {
   width: 100%;
@@ -820,7 +831,7 @@ header {
   border-radius: 8px;
   width: 10%;
   height: 100%;
-  background-color: #EFB2B2;
+  background-color: #405be6;
 }
 
 /* --- PATTERN SECTION --- */

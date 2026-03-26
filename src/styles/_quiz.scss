@@ -13,7 +13,7 @@
 
 /* --- BODY --- */
 body.quiz-page {
-  background-color: $color-bud;
+  background-color: #343434;
   max-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -32,9 +32,9 @@ header {
 
 /* --- PROGRESS ZONE --- */
 .quiz-progress {
-  background-color: #4f4f4f;
+  background-color: $color-bud;
   padding: 1rem 2rem;
-  color: $color-white;
+  color: $color-black;
 
   &__inner {
     width: 100%;
@@ -57,7 +57,7 @@ header {
     border-radius: 8px;
     width: 10%;
     height: 100%;
-    background-color: $color-bud;
+    background-color: $color-primary;
   }
 }
 

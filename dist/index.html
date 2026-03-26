@@ -9,7 +9,7 @@
   <body>
     <!-- HEADER / NAV -->
     <header>
-      <nav>
+      <nav class="container">
         <div class="logo">
           <img src="images/wtf.svg" alt="Movie logo" />
           <span>Movie Quiz</span>
@@ -59,9 +59,10 @@
             <input type="text" id="nickname" name="nickname" autocomplete="off" />
           </div>
 
-            <a href="quiz.html" class="modal-profile__submit" type="button">Start Quiz</a>
+          <a href="quiz.html" class="modal-profile__submit" type="button">Start Quiz</a>
         </div>
       </div>
+
       <div class="modal-category" id="modal-category">
         <h2 class="modal-category__external-title">CHOOSE YOUR CHALLENGE</h2>
         <div class="modal-category__card">
@@ -113,97 +114,105 @@
       </div>
 
       <section class="pattern">
-        <!-- HERO SECTION -->
-        <section class="hero">
-          <h1>Quote <span>King</span> or Movie Fan?</h1>
-          <div class="placeFill">
-            <p>Test your cinema knowledge by matching</p>
-            <p>iconic movie quotes to their films.</p>
-          </div>
-          <div class="hero__actions">
-            <a href="#" class="btn-prm" onclick="openModal('modal-profile')">Start Quiz</a>
-            <a href="#" class="btn-scd" onclick="openModal('modal-category')">Browse by Category</a>
-          </div>
-        </section>
+        <div class="container">
+          <!-- HERO SECTION -->
+          <section class="hero">
+            <h1>Quote <span>King</span> or Movie Fan?</h1>
+            <div class="placeFill">
+              <p>Test your cinema knowledge by matching</p>
+              <p>iconic movie quotes to their films.</p>
+            </div>
+            <div class="hero__actions">
+              <a href="#" class="btn-prm" onclick="openModal('modal-profile')">Start Quiz</a>
+              <a href="#" class="btn-scd" onclick="openModal('modal-category')">Browse by Category</a>
+            </div>
+          </section>
 
-        <!-- FEATURES SECTION -->
-        <section class="features">
-          <article class="feature">
-            <span class="feature__icon">A</span>
-            <h2>Iconic Quotes</h2>
-            <p>Test your knowledge of cinema's most memorable lines.</p>
-          </article>
-          <article class="feature">
-            <span class="feature__icon">B</span>
-            <h2>Track Progress</h2>
-            <p>Watch your score climb as you correctly identify quotes.</p>
-          </article>
-          <article class="feature">
-            <span class="feature__icon">C</span>
-            <h2>Get Feedback</h2>
-            <p>Receive personalized feedback based on your performance.</p>
-          </article>
-        </section>
+          <!-- FEATURES SECTION -->
+          <section class="features">
+            <article class="feature">
+              <span class="feature__icon">A</span>
+              <h2>Iconic Quotes</h2>
+              <p>Test your knowledge of cinema's most memorable lines.</p>
+            </article>
+            <article class="feature">
+              <span class="feature__icon">B</span>
+              <h2>Track Progress</h2>
+              <p>Watch your score climb as you correctly identify quotes.</p>
+            </article>
+            <article class="feature">
+              <span class="feature__icon">C</span>
+              <h2>Get Feedback</h2>
+              <p>Receive personalized feedback based on your performance.</p>
+            </article>
+          </section>
+        </div>
       </section>
+
       <!-- LEADERBOARD + QUOTE TEASER SECTION -->
       <section class="bottom-section">
-        <!-- LEADERBOARD -->
-        <div class="leaderboard">
-          <h2>Top Players This Week</h2>
-          <ol>
-            <li>
-              <span class="username">SQUEEZI</span>
-              <span class="score">20/20</span>
-              <time>MAR 22 [ 20:21 ]</time>
-            </li>
-            <li>
-              <span class="username">PERCEPTOR</span>
-              <span class="score">20/20</span>
-              <time>MAR 21 [ 19:22 ]</time>
-            </li>
-            <li>
-              <span class="username">JORDAN KDI...</span>
-              <span class="score">20/20</span>
-              <time>MAR 21 [ 15:55 ]</time>
-            </li>
-          </ol>
-        </div>
+        <div class="container container__grid-2">
+          <!-- LEADERBOARD -->
+          <div class="leaderboard">
+            <h2>Top Players This Week</h2>
+            <ol>
+              <li>
+                <span class="username">SQUEEZI</span>
+                <span class="score">20/20</span>
+                <time>MAR 22 [ 20:21 ]</time>
+              </li>
+              <li>
+                <span class="username">PERCEPTOR</span>
+                <span class="score">20/20</span>
+                <time>MAR 21 [ 19:22 ]</time>
+              </li>
+              <li>
+                <span class="username">JORDAN KDI...</span>
+                <span class="score">20/20</span>
+                <time>MAR 21 [ 15:55 ]</time>
+              </li>
+            </ol>
+          </div>
 
-        <!-- QUOTE TEASER -->
-        <div class="quote-teaser">
-          <blockquote>
-            <p>May the Force be with you.</p>
-            <footer>— Guess the movie!</footer>
-          </blockquote>
-          <button type="button">Reveal Answer</button>
+          <!-- QUOTE TEASER -->
+          <div class="quote-teaser">
+            <blockquote>
+              <p>May the Force be with you.</p>
+              <footer>— Guess the movie!</footer>
+            </blockquote>
+            <button type="button">Reveal Answer</button>
+          </div>
         </div>
       </section>
     </main>
 
     <div class="footer-divider"></div>
+
     <!-- FOOTER -->
     <footer class="footer">
-      <div class="footer__brand">
-        <p class="footer__logo">Movie Kings</p>
-        <p>Ultimate Movie Quiz to challenge your friends.</p>
-      </div>
-      <div class="footer__right">
-        <nav class="footer__nav">
-          <h3>Navigation</h3>
-          <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Start Quiz</a></li>
-            <li><a href="#">Results</a></li>
-            <li><a href="#">About</a></li>
-          </ul>
-        </nav>
-        <div class="footer__resources">
-          <h3>Resources</h3>
-          <ul>
-            <li><a href="#">IMDb</a></li>
-            <li><a href="#">Sight &amp; Sound</a></li>
-            <li><a href="#">Rotten Tomatoes</a></li>
-          </ul>
+      <div class="container footer__inner">
+        <div class="footer__brand">
+          <p class="footer__logo">Movie Kings</p>
+          <p>Ultimate Movie Quiz to challenge your friends.</p>
+        </div>
+        <div class="footer__right">
+          <nav class="footer__nav">
+            <h3>Navigation</h3>
+            <ul>
+              <li><a href="#">Home</a></li>
+              <li><a href="#">Start Quiz</a></li>
+              <li><a href="#">Results</a></li>
+              <li><a href="#">About</a></li>
+            </ul>
+          </nav>
+          <div class="footer__resources">
+            <h3>Resources</h3>
+            <ul>
+              <li><a href="#">IMDb</a></li>
+              <li><a href="#">Sight &amp; Sound</a></li>
+              <li><a href="#">Rotten Tomatoes</a></li>
+            </ul>
+          </div>
         </div>
       </div>
     </footer>
