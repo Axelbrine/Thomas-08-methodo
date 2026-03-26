@@ -11,12 +11,71 @@
     flex-grow: 1;
   }
 }
+@mixin primary-btn {
+  align-content: center;
+  width: fit-content;
+  height: fit-content;
+  padding: 10px 10px;
+  border-radius: 8px;
+  color: $color-white;
+  background: $color-primary;
+  &:hover {
+    background: $color-primary-hover;
+  }
+  &:active {
+    background: $color-primary-active;
+  }
+}
+@mixin secondary-btn {
+  align-content: center;
+  width: fit-content;
+  height: fit-content;
+  padding: 10px 10px;
+  border-radius: 8px;
+  color: $color-white;
+  background: $color-secondary;
+  &:hover {
+    background: $color-secondary-hover;
+  }
+  &:active {
+    background: $color-secondary-active;
+  }
+}
+@mixin secondary-btn-disabled {
+  align-content: center;
+  width: fit-content;
+  height: fit-content;
+  padding: 10px 10px;
+  border-radius: 8px;
+  color: $color-white;
+  background: $color-secondary-disabled;
+}
+@mixin ghost-btn {
+  align-content: center;
+  width: fit-content;
+  padding: 10px 10px;
+  border-radius: 8px;
+  background: none;
+  color: $color-black;
+  border: 2px solid $color-grey-3;
+}
+@mixin bad-choice {
+  border-color: $color-bad !important;
+  background: #fdf0ee !important;
+  color: $color-bad !important;
+}
+
+@mixin good-choice {
+  border-color: $color-good !important;
+  background: #edfaf2 !important;
+  color: $color-good !important;
+}
 
 $breakpoints: (
-  'small'    : 450px,
-  'desktop'  : 1280px,
-  'large'    : 1600px
-); 
+  "small": 450px,
+  "desktop": 1280px,
+  "large": 1600px,
+);
 
 @mixin bp($bpvalue) {
   // Retrieves the value from the key

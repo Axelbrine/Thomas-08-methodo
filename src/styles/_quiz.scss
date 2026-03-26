@@ -1,0 +1,211 @@
+@use "variables" as *;
+@import "mixins";
+
+*,
+*::after,
+*::before {
+  transition: background 0.2s ease;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+}
+
+/* --- BODY --- */
+body.quiz-page {
+  background-color: $color-bud;
+  max-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* --- HEADER --- */
+header {
+  background-color: #ffffff;
+}
+
+/* Bouton Stop Quiz */
+.btn-stop-quiz {
+  @include secondary-btn;
+  text-transform: uppercase;
+}
+
+/* --- PROGRESS ZONE --- */
+.quiz-progress {
+  background-color: #4f4f4f;
+  padding: 1rem 2rem;
+  color: $color-white;
+
+  &__inner {
+    width: 100%;
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+  &__info {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__bar {
+    border-radius: 8px;
+    height: 20px;
+    background-color: #000000;
+  }
+
+  &__fill {
+    border-radius: 8px;
+    width: 10%;
+    height: 100%;
+    background-color: $color-bud;
+  }
+}
+
+/* --- PATTERN SECTION --- */
+.quiz-pattern {
+  background:
+    linear-gradient(135deg, #00000055 25%, transparent 25%) -40px 0/ 80px 80px,
+    linear-gradient(225deg, #000000 25%, transparent 25%) -40px 0/ 80px 80px,
+    linear-gradient(315deg, #00000055 25%, transparent 25%) 0px 0/ 80px 80px,
+    linear-gradient(45deg, #000000 25%, #4f4f4f 25%) 0px 0/ 80px 80px;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+/* --- QUIZ CARD --- */
+.quiz-card {
+  background-color: #ffffff;
+  width: 100%;
+  max-width: 700px;
+  padding: 2rem;
+  display: grid;
+  gap: 2rem;
+
+  &__quote {
+    font-size: 1.2rem;
+    padding: 0.5rem;
+  }
+
+  // Pour mettre en liste de base
+  /*
+  &__options {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    margin-bottom: 1.5rem;
+    padding: 0.5rem;
+  }
+    */
+
+  /* --- OPTIONS --- */
+  &__options {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    padding: 0.5rem;
+  }
+
+  /* --- CARD FOOTER / SUBMIT --- */
+  &__footer {
+    display: flex;
+    justify-content: flex-end;
+    padding: 0.5rem;
+  }
+
+  &__submit {
+    @include secondary-btn-disabled;
+    border: none;
+    cursor: not-allowed;
+    text-transform: uppercase;
+  }
+
+  &__submit:not([disabled]) {
+    @include secondary-btn;
+    cursor: pointer;
+  }
+}
+
+.quiz-option {
+  display: block;
+  cursor: pointer;
+  input[type="radio"] {
+    display: none;
+  }
+
+  > span {
+    @include ghost-btn;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding-left: 1rem;
+    transition: background 0.2s ease;
+  }
+
+  &__title {
+    font-size: inherit;
+  }
+
+  &__director {
+    font-style: italic;
+  }
+
+  &__year {
+    color: $color-bud-dark;
+  }
+
+  &:hover > span {
+    background: $color-primary-hover;
+    color: $color-white;
+    .quiz-option__year {
+      color: $color-bud;
+    }
+  }
+
+  input[type="radio"]:checked + span {
+    background: $color-primary-active;
+    color: $color-white;
+    .quiz-option__year {
+      color: $color-bud;
+    }
+  }
+}
+
+
+      /* --- ÉTATS RÉPONSE --- */
+ 
+      /* Bloque interactions après submit */
+      .quiz-card--submitted .quiz-option {
+        cursor: default;
+        pointer-events: none;
+      }
+ 
+      /* Option correcte */
+      .quiz-option--correct > span {
+        @include good-choice ;
+      }
+      .quiz-option--correct .quiz-option__director,
+      .quiz-option--correct .quiz-option__year {
+        color: $color-good !important;
+      }
+ 
+      /* Option incorrecte */
+      .quiz-option--wrong > span {
+        @include bad-choice ;
+      }
+      .quiz-option--wrong .quiz-option__director,
+      .quiz-option--wrong .quiz-option__year {
+        color: $color-bad !important;
+      }
+ 
+      /* Bouton NEXT */
+      .quiz-card__next {
+        display: none;
+        @include secondary-btn;
+        border: none;
+      }
+      .quiz-card__next.is-visible {
+        display: block;
+      }
